@@ -1,0 +1,56 @@
+/* styles.css */
+
+/* Basic Reset */
+body, h1, button, div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Heading Styling */
+h1 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  color: #4CAF50;
+}
+
+/* Button Styling */
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Prompt Display Styling */
+#prompt {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #e8f5e9;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 20px auto 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+}
