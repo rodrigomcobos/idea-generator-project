@@ -1,0 +1,108 @@
+/* styles.css */
+
+/* Basic Reset */
+body, h1, button, div, header, nav, a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling with Moving Radial Gradient Background */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+  background: radial-gradient(circle, #ff7e5f, #feb47b); /* Default gradient */
+  background-size: 600% 600%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* Header Styling */
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: transparent; /* Transparent header */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff; /* White text color */
+  text-transform: uppercase; /* Uppercase font */
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff; /* White text color */
+  text-transform: uppercase; /* Uppercase font */
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #4CAF50; /* Hover effect */
+}
+
+/* Content Box Styling */
+.content-box {
+  padding: 40px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.7); /* Darker background with opacity */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading Styling */
+h1 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  color: #3c3535;
+}
+
+/* Button Styling */
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #eb493a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+/* Prompt Display Styling */
+#prompt {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #333; /* Darker background color */
+  color: #fff; /* White text color */
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 20px auto 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+}
