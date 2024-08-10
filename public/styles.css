@@ -36,7 +36,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 5px 10px;
   background-color: transparent; /* Transparent header */
 }
 
@@ -44,7 +44,12 @@ header {
   font-size: 24px;
   font-weight: bold;
   color: #fff; /* White text color */
-  text-transform: uppercase; /* Uppercase font */
+  text-transform: uppercase;
+}
+
+.logo img {
+  width: 150px; /* adjust the width to your desired size */
+  height: auto; /* maintain the aspect ratio */
 }
 
 nav a {
@@ -189,4 +194,36 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     word-wrap: break-word;
   }
+}
+
+/* styles.css */
+
+.about-box {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.1); /* A bit lighter for readability */
+  color: #fff; /* White text for contrast */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  line-height: 1.6;
+}
+
+/* styles.css */
+
+/* Back Button Styling */
+.back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #444;
 }
