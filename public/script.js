@@ -2,8 +2,6 @@
 
 function generatePrompt() {
   const actionPrompts = ['Design', 'Create'];
-  // JavaScript: script.js
-
   const continuationPrompts = [
     'a mobile app for learning languages.',
     'a logo for a tech startup.',
