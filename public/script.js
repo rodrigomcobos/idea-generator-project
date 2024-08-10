@@ -103,3 +103,18 @@ function getContrastingColor(hexColor) {
   const brightness = (r * 299 + g * 587 + b * 114) / 1000;
   return brightness > 128 ? '#000' : '#fff';
 }
+
+document.querySelector('.hamburger').addEventListener('click', function () {
+  document.querySelector('.slide-menu').classList.toggle('active');
+});
+
+// Close the slide-out menu if clicking outside of it
+document.addEventListener('click', function (event) {
+  const slideMenu = document.querySelector('.slide-menu');
+  const hamburger = document.querySelector('.hamburger');
+
+  // Check if the click is outside the slide menu and hamburger button
+  if (!slideMenu.contains(event.target) && !hamburger.contains(event.target)) {
+    slideMenu.classList.remove('active');
+  }
+});
