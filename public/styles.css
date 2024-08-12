@@ -83,7 +83,7 @@ nav a::after {
   content: '';
   position: absolute;
   width: 0%;
-  height: 2px;
+  height: 3px;
   bottom: -3px;
   left: 0;
   background-color: #fff; /* White line color */
@@ -95,7 +95,7 @@ nav a:hover::after {
 }
 
 nav a:hover {
-  color: #641515; /* Hover effect */
+  color: #ffffff; /* Hover effect */
 }
 
 /* Slide-out Menu */
@@ -106,7 +106,7 @@ nav a:hover {
   right: -250px; /* Start off-screen */
   height: 100%;
   width: 250px;
-  background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+  background-color: rgba(44, 44, 44, 0.459); /* Dark background */
   padding: 60px 20px;
   transition: right 0.3s ease;
   z-index: 1000;
@@ -122,6 +122,7 @@ nav a:hover {
   margin: 20px 0;
   color: #fff;
   font-size: 18px;
+  font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -144,12 +145,13 @@ nav a:hover {
 /* Content Box Styling */
 .content-box {
   max-width: 1000px;
+  margin-top: 100px;
   margin-bottom: 100px;
   margin-left: 50px;
   margin-right: 50px;
   padding: 50px;
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.516); /* Darker background with opacity */
+  background-color: rgba(255, 255, 255, 0.251); /* Darker background with opacity */
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -179,10 +181,11 @@ nav a:hover {
 h1 {
   margin-bottom: 20px;
   font-size: 40px;
-  color: #3c3535;
+  color: #ffffff;
 }
 
 p {
+  color: #fff;
   font-size: 18px;
   padding: 20px;
 }
@@ -222,7 +225,7 @@ button:hover {
 /* Footer Styling */
 footer {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.478); /* Dark background for footer */
+  background-color: rgba(255, 255, 255, 0.174); /* Dark background for footer */
   color: #fff; /* White text color */
   padding: 20px 0;
   position: fixed; /* Fixed footer */
@@ -254,7 +257,7 @@ footer {
 
 .footer-links {
   display: flex;
-  gap: 10px;
+  gap: 50px;
 }
 
 .footer-links a {
@@ -264,7 +267,7 @@ footer {
 }
 
 .footer-links a:hover {
-  color: #4CAF50; /* Hover effect */
+  color: #030303; /* Hover effect */
 }
 
 .footer-bottom {
@@ -286,10 +289,81 @@ footer {
       flex-direction: column;
       gap: 5px;
   }
+
+  .content-box {
+    max-width: 1000px;
+    align-items: center;
+    margin-top: 250px;
+    margin-bottom: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.251); /* Darker background with opacity */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  #prompt {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgba(30, 30, 30, 0.714); /* Darker background color */
+    color: #ffffff; /* White text color */
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 20px auto 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+  }
+
+  footer {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.174); /* Dark background for footer */
+    color: #fff; /* White text color */
+    padding: 20px 0;
+    position:relative; /* Fixed footer */
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
 }
 
 /* Cellphone media query */
 @media (max-width: 320px) {
+  header {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 20px;
+    bottom: 20px;
+    background-color: transparent; /* Transparent header */
+  }
+  
+  .content-box {
+    max-width: 1000px;
+    margin-top: 400px;
+    margin-bottom: 80px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.251); /* Darker background with opacity */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .logo img {
+    width: 90px; /* adjust the width to your desired size */
+    height: auto; /* maintain the aspect ratio */
+  }
+  
   #prompt {
     margin-top: 20px;
     font-size: 18px;
@@ -302,6 +376,20 @@ footer {
     margin: 20px auto 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     word-wrap: break-word;
+  }
+
+  footer {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.174); /* Dark background for footer */
+    color: #fff; /* White text color */
+    padding: 20px 0;
+    position:relative; /* Fixed footer */
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
   }
 }
 
