@@ -1,38 +1,44 @@
 // Load prompts from the JSON file
 let promptsData;
 
-fetch('prompts.json')
-  .then((response) => response.json())
+fetch('prompts.json') // Replace 'prompts.json' with the path to your JSON file
+  .then((response) => response.json()) // Parse the response as JSON
   .then((data) => {
-    promptsData = data;
+    // Process the JSON data
+    promptsData = data; // Store the data in the 'promptsData' variable
   })
   .catch((error) => {
-    console.error('Error loading prompts:', error);
+    // Handle any errors
+    console.error('Error loading prompts:', error); // Log the error
   });
 
 function generatePrompt() {
+  // Function to generate a prompt
   if (!promptsData) {
-    console.error('Prompts data not loaded yet.');
+    // Check if the 'promptsData' variable is defined
+    console.error('Prompts data not loaded yet.'); // Log an error if it's not
     return;
   }
 
-  const actionPrompts = ['Design', 'Create'];
-  const continuationPrompts = promptsData.designPrompts;
+  const actionPrompts = ['Design', 'Create']; // Array of action prompts
+  const continuationPrompts = promptsData.designPrompts; // Array of continuation prompts
 
-  const randomAction =
-    actionPrompts[Math.floor(Math.random() * actionPrompts.length)];
-  const randomContinuation =
-    continuationPrompts[Math.floor(Math.random() * continuationPrompts.length)];
-  const randomPrompt = `${randomAction} ${randomContinuation}`;
+  const randomAction = // Generate a random action and continuation prompt
+    actionPrompts[Math.floor(Math.random() * actionPrompts.length)]; // Randomly select an action
+  const randomContinuation = // Randomly select a continuation prompt
+    continuationPrompts[Math.floor(Math.random() * continuationPrompts.length)]; // Randomly select a continuation
+  const randomPrompt = `${randomAction} ${randomContinuation}`; // Combine the action and continuation prompts
 
-  document.getElementById('prompt').textContent = randomPrompt;
+  document.getElementById('prompt').textContent = randomPrompt; // Display the prompt
 
   // Change the background gradient
-  changeBackgroundGradient();
+  changeBackgroundGradient(); // Call the function to change the background
 }
 
 function changeBackgroundGradient() {
+  // Function to change the background
   const gradients = [
+    // Array of gradients
     {
       gradient: 'radial-gradient(circle, #ff7e5f, #feb47b)',
       primary: '#ff7e5f',
@@ -59,39 +65,44 @@ function changeBackgroundGradient() {
     },
   ];
 
-  const randomGradient =
-    gradients[Math.floor(Math.random() * gradients.length)];
-  document.body.style.background = randomGradient.gradient;
-  document.body.style.backgroundSize = '600% 600%';
-  document.body.style.animation = 'gradientAnimation 10s ease infinite';
+  const randomGradient = // Randomly select a gradient
+    gradients[Math.floor(Math.random() * gradients.length)]; // Randomly select a gradient
+  document.body.style.background = randomGradient.gradient; // Set the background gradient
+  document.body.style.backgroundSize = '600% 600%'; // Set the background gradient size
+  document.body.style.animation = 'gradientAnimation 10s ease infinite'; // Set the background gradient animation
 }
 
 // Close the slide-out menu if clicking outside of it
 document.addEventListener('click', function (event) {
-  const slideMenu = document.querySelector('.slide-menu');
-  const hamburger = document.querySelector('.hamburger');
+  // Add an event listener for the click event
+  const slideMenu = document.querySelector('.slide-menu'); // Select the slide menu
+  const hamburger = document.querySelector('.hamburger'); // Select the hamburger
 
   // Check if the click is outside the slide menu and hamburger button
   if (!slideMenu.contains(event.target) && !hamburger.contains(event.target)) {
-    slideMenu.classList.remove('active');
+    // If it is, remove the slide menu
+    slideMenu.classList.remove('active'); // Remove the slide menu
   }
 });
 
 // Event listener for the hamburger menu
 document.querySelector('.hamburger').addEventListener('click', function () {
-  document.querySelector('.slide-menu').classList.toggle('active');
+  // Add an event listener for the click event
+  document.querySelector('.slide-menu').classList.toggle('active'); // Toggle the slide menu class on click
 });
 
 // Event listener for the close (X) button
 document.querySelector('.close-menu').addEventListener('click', function () {
-  document.querySelector('.slide-menu').classList.remove('active');
+  // Add an event listener for the click event
+  document.querySelector('.slide-menu').classList.remove('active'); // Remove the slide menu class on click
 });
 
 function getContrastingColor(hexColor) {
+  // Function to get the contrasting color from a hex color value
   const r = parseInt(hexColor.slice(1, 3), 16);
   const g = parseInt(hexColor.slice(1, 3), 16);
   const b = parseInt(hexColor.slice(1, 3), 16);
 
-  const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-  return brightness > 128 ? '#000' : '#fff';
+  const brightness = (r * 299 + g * 587 + b * 114) / 1000; // Calculate the brightness of the color (0-255)
+  return brightness > 128 ? '#000' : '#fff'; // Return the contrasting color (white or black)
 }
