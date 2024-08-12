@@ -30,7 +30,7 @@ body {
 header {
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 95vw;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -76,6 +76,22 @@ nav a {
   color: #fff; /* White text color */
   text-transform: uppercase; /* Uppercase font */
   transition: color 0.3s ease;
+  position: relative; /* Relative positioning for the line hover effect */
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #fff; /* White line color */
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 nav a:hover {
@@ -127,40 +143,54 @@ nav a:hover {
 
 /* Content Box Styling */
 .content-box {
+  max-width: 1000px;
   margin-bottom: 100px;
   margin-left: 50px;
   margin-right: 50px;
-  padding: 40px;
+  padding: 50px;
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.7); /* Darker background with opacity */
+  background-color: rgba(255, 255, 255, 0.516); /* Darker background with opacity */
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .about {
-  max-width:1000px;
+  max-width: 1000px;
   margin-top: 60px; /* Adjust this value to move the box closer to the header */
   margin-bottom: 100px;
   margin-left: 50px;
   margin-right: 50px;
   padding: 40px;
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.7); /* Darker background with opacity */
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0.516); /* Darker background with opacity */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-title {
+  text-align: center;
+}
+
+.about-text {
+  text-align: justify;
 }
 
 
 /* Heading Styling */
 h1 {
   margin-bottom: 20px;
-  font-size: 32px;
+  font-size: 40px;
   color: #3c3535;
+}
+
+p {
+  font-size: 18px;
+  padding: 20px;
 }
 
 /* Button Styling */
 button {
-  padding: 12px 24px;
+  padding: 20px 34px;
+  margin-bottom: 30px;
   font-size: 18px;
   background-color: #eb493a;
   color: white;
@@ -177,13 +207,13 @@ button:hover {
 /* Prompt Display Styling */
 #prompt {
   margin-top: 20px;
-  font-size: 24px;
+  font-size: 34px;
   font-weight: bold;
-  background-color: #333; /* Darker background color */
-  color: #fff; /* White text color */
-  padding: 15px;
+  background-color: rgba(30, 30, 30, 0.714); /* Darker background color */
+  color: #ffffff; /* White text color */
+  padding: 50px;
   border-radius: 8px;
-  max-width: 400px;
+  max-width: 700px;
   margin: 20px auto 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   word-wrap: break-word;
@@ -206,9 +236,9 @@ footer {
 
 .footer-content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 100vw;
+  width: 90vw;
   margin: 1em auto;
 }
 
@@ -275,7 +305,6 @@ footer {
   }
 }
 
-/* styles.css */
 
 .about-box {
   max-width: 800px;
@@ -288,7 +317,6 @@ footer {
   line-height: 1.6;
 }
 
-/* styles.css */
 
 /* Back Button Styling */
 .back-button {
@@ -301,8 +329,8 @@ footer {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-.back-button:hover {
+  }
+  
+  .back-button{
   background-color: #444;
-}
+  }

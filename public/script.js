@@ -64,23 +64,7 @@ function changeBackgroundGradient() {
   document.body.style.background = randomGradient.gradient;
   document.body.style.backgroundSize = '600% 600%';
   document.body.style.animation = 'gradientAnimation 10s ease infinite';
-
-  // Optionally update the content box background based on gradient
-  // document.querySelector('.content-box').style.backgroundColor = getContrastingColor(randomGradient.primary);
 }
-
-function getContrastingColor(hexColor) {
-  const r = parseInt(hexColor.slice(1, 3), 16);
-  const g = parseInt(hexColor.slice(1, 3), 16);
-  const b = parseInt(hexColor.slice(1, 3), 16);
-
-  const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-  return brightness > 128 ? '#000' : '#fff';
-}
-
-document.querySelector('.hamburger').addEventListener('click', function () {
-  document.querySelector('.slide-menu').classList.toggle('active');
-});
 
 // Close the slide-out menu if clicking outside of it
 document.addEventListener('click', function (event) {
@@ -92,3 +76,22 @@ document.addEventListener('click', function (event) {
     slideMenu.classList.remove('active');
   }
 });
+
+// Event listener for the hamburger menu
+document.querySelector('.hamburger').addEventListener('click', function () {
+  document.querySelector('.slide-menu').classList.toggle('active');
+});
+
+// Event listener for the close (X) button
+document.querySelector('.close-menu').addEventListener('click', function () {
+  document.querySelector('.slide-menu').classList.remove('active');
+});
+
+function getContrastingColor(hexColor) {
+  const r = parseInt(hexColor.slice(1, 3), 16);
+  const g = parseInt(hexColor.slice(1, 3), 16);
+  const b = parseInt(hexColor.slice(1, 3), 16);
+
+  const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+  return brightness > 128 ? '#000' : '#fff';
+}
