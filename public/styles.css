@@ -145,7 +145,7 @@ nav a:hover {
 /* Content Box Styling */
 .content-box {
   max-width: 1000px;
-  margin-top: 100px;
+  margin-top: 60vh;
   margin-bottom: 100px;
   margin-left: 50px;
   margin-right: 50px;
@@ -158,13 +158,13 @@ nav a:hover {
 
 .about {
   max-width: 1000px;
-  margin-top: 60px; /* Adjust this value to move the box closer to the header */
+  margin-top: 80vh; /* Adjust this value to move the box closer to the header */
   margin-bottom: 100px;
   margin-left: 50px;
   margin-right: 50px;
   padding: 40px;
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.516); /* Darker background with opacity */
+  background-color: rgba(255, 255, 255, 0.251); /* Darker background with opacity */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -228,7 +228,7 @@ footer {
   background-color: rgba(255, 255, 255, 0.174); /* Dark background for footer */
   color: #fff; /* White text color */
   padding: 20px 0;
-  position: fixed; /* Fixed footer */
+  position: relative; /* Fixed footer */
   bottom: 0;
   left: 0;
   display: flex;
@@ -278,6 +278,15 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 650px) {
+  
+  .about-title {
+    text-align: center;
+  }
+  
+  .about-text {
+    text-align: justify;
+  } 
+
   .footer-content {
       flex-direction: column;
       align-items: center;
@@ -292,9 +301,9 @@ footer {
 
   .content-box {
     max-width: 1000px;
+    justify-items: center;
     align-items: center;
-    margin-top: 250px;
-    margin-bottom: 100px;
+    margin-top: 80vh;
     margin-left: 50px;
     margin-right: 50px;
     padding: 30px;
@@ -322,7 +331,7 @@ footer {
     background-color: rgba(255, 255, 255, 0.174); /* Dark background for footer */
     color: #fff; /* White text color */
     padding: 20px 0;
-    position:relative; /* Fixed footer */
+    position: relative;
     bottom: 0;
     left: 0;
     display: flex;
@@ -333,7 +342,7 @@ footer {
 }
 
 /* Cellphone media query */
-@media (max-width: 320px) {
+@media (max-width: 420px) {
   header {
     position: absolute;
     top: 0;
@@ -348,7 +357,7 @@ footer {
   
   .content-box {
     max-width: 1000px;
-    margin-top: 400px;
+    margin-top: 80vh;
     margin-bottom: 80px;
     margin-left: 50px;
     margin-right: 50px;
@@ -391,34 +400,28 @@ footer {
     align-items: center;
     padding: 0 20px;
   }
-}
-
-
-.about-box {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 40px;
-  background-color: rgba(255, 255, 255, 0.1); /* A bit lighter for readability */
-  color: #fff; /* White text for contrast */
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  line-height: 1.6;
+  .about-box {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.251); /* A bit lighter for readability */
+    color: #fff; /* White text for contrast */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    line-height: 1.6;
+  }
 }
 
 
 /* Back Button Styling */
 .back-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #333;
+  padding: 20px 34px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  background-color: #eb493a;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  }
-  
-  .back-button{
-  background-color: #444;
   }
