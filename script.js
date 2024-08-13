@@ -1,5 +1,4 @@
 // Load prompts from the JSON file
-const lodash = require('lodash');
 let promptsData;
 
 fetch('prompts.json') // Replace 'prompts.json' with the path to your JSON file
@@ -12,24 +11,6 @@ fetch('prompts.json') // Replace 'prompts.json' with the path to your JSON file
     // Handle any errors
     console.error('Error loading prompts:', error); // Log the error
   });
-
-let lastScrollTop = 0;
-const header = document.querySelector('header');
-
-window.addEventListener('scroll', function () {
-  const currentScroll =
-    window.pageYOffset || document.documentElement.scrollTop;
-
-  if (currentScroll > lastScrollTop) {
-    // Scrolling down
-    header.style.top = '-100px'; // Adjust value to hide the header completely
-  } else {
-    // Scrolling up
-    header.style.top = '0';
-  }
-
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scrolling
-});
 
 function generatePrompt() {
   // Function to generate a prompt
