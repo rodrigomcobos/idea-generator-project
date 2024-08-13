@@ -10,9 +10,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Align content to the top to avoid overlap */
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   color: #333;
   background: radial-gradient(circle, #ff7e5f, #feb47b); /* Default gradient */
   background-size: 600% 600%;
@@ -28,14 +28,17 @@ body {
 
 /* Header Styling */
 header {
-  position: absolute;
-  top: 0;;
-  width: 95vw;
+  position: fixed; /* Fixed position to stay on top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: top 0.3s ease; /* Full width to avoid overlap */
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 20px 30px;
   background-color: transparent; /* Transparent header */
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
 .logo {
@@ -47,7 +50,7 @@ header {
 
 .logo img {
   width: 120px; /* adjust the width to your desired size */
-  height: auto; /* maintain the aspect ratio */;
+  height: auto; /* maintain the aspect ratio */
 }
 
 /* Hamburger Menu Button */
@@ -144,8 +147,8 @@ nav a:hover {
 
 /* Content Box Styling */
 .content-box {
-  max-width: 1000px;
-  margin-top: 30vh;
+  max-width: 800px;
+  margin-top: 150px; /* Add top margin to avoid header overlap */
   margin-bottom: 100px;
   margin-left: 50px;
   margin-right: 50px;
@@ -156,12 +159,11 @@ nav a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* About Box Styling */
 .about {
   max-width: 1000px;
-  margin-top: 80vh; /* Adjust this value to move the box closer to the header */
+  margin-top: 150px; /* Adjust this value to move the box closer to the header */
   margin-bottom: 100px;
-  margin-left: 50px;
-  margin-right: 50px;
   padding: 40px;
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.251); /* Darker background with opacity */
@@ -175,7 +177,6 @@ nav a:hover {
 .about-text {
   text-align: justify;
 }
-
 
 /* Heading Styling */
 h1 {
@@ -227,14 +228,12 @@ footer {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.174); /* Dark background for footer */
   color: #fff; /* White text color */
-  padding: 20px 0;
-  position: relative; /* Fixed footer */
-  bottom: 0;
+  padding-top: 20px;
+  position: relative;
   left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
 }
 
 .footer-content {
@@ -278,7 +277,6 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 650px) {
-  
   .about-title {
     text-align: center;
   }
@@ -288,29 +286,21 @@ footer {
   } 
 
   .footer-content {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .footer-links {
-      margin: 10px 0;
-      flex-direction: column;
-      gap: 5px;
+    margin: 10px 0;
+    flex-direction: column;
+    gap: 5px;
   }
 
   .content-box {
-    max-width: 1000px;
-    justify-items: center;
-    align-items: center;
-    margin-top: 80vh;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-top: 200px; /* Adjusted to ensure no overlap */
     padding: 30px;
-    border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.251); /* Darker background with opacity */
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
   #prompt {
@@ -331,97 +321,28 @@ footer {
     background-color: rgba(255, 255, 255, 0.174); /* Dark background for footer */
     color: #fff; /* White text color */
     padding: 20px 0;
-    position: relative;
+    position: relative; /* Set footer as relative */
     bottom: 0;
     left: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center the content in smaller screens */
     align-items: center;
-    padding: 0 20px;
+    padding: 20px;
   }
-}
 
-/* Cellphone media query */
-@media (max-width: 420px) {
-  header {
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px 20px;
-    bottom: 20px;
-    background-color: transparent; /* Transparent header */
+  .footer-logo {
+    margin-bottom: 10px;
   }
-  
-  .content-box {
-    max-width: 1000px;
-    margin-top: 80vh;
-    margin-bottom: 80px;
-    margin-left: 50px;
-    margin-right: 50px;
-    padding: 30px;
-    border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.251); /* Darker background with opacity */
+
+  .footer-bottom {
+    font-size: 12px; /* Adjusted font size for small screens */
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  .logo img {
-    width: 90px; /* adjust the width to your desired size */
-    height: auto; /* maintain the aspect ratio */
-  }
-  
-  #prompt {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #333; /* Darker background color */
-    color: #fff; /* White text color */
-    padding: 15px;
-    border-radius: 8px;
-    max-width: 400px;
-    margin: 20px auto 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    word-wrap: break-word;
-  }
-
-  footer {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.174); /* Dark background for footer */
-    color: #fff; /* White text color */
-    padding: 20px 0;
-    position:relative; /* Fixed footer */
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-  }
-  .about-box {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.251); /* A bit lighter for readability */
-    color: #fff; /* White text for contrast */
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    line-height: 1.6;
   }
 }
 
-
-/* Back Button Styling */
-.back-button {
-  padding: 20px 34px;
-  margin-bottom: 30px;
-  font-size: 18px;
-  background-color: #eb493a;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+@media (max-width: 450px){
+  .content-box {
+    margin-left: 20px;
+    margin-right: 20px;
   }
+}
