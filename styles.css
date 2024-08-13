@@ -29,7 +29,7 @@ body {
 /* Header Styling */
 header {
   position: absolute;
-  top: 0;
+  top: 0;;
   width: 95vw;
   display: flex;
   justify-content: space-between;
@@ -47,7 +47,7 @@ header {
 
 .logo img {
   width: 120px; /* adjust the width to your desired size */
-  height: auto; /* maintain the aspect ratio */
+  height: auto; /* maintain the aspect ratio */;
 }
 
 /* Hamburger Menu Button */

@@ -1,4 +1,5 @@
 // Load prompts from the JSON file
+const lodash = require('lodash');
 let promptsData;
 
 fetch('prompts.json') // Replace 'prompts.json' with the path to your JSON file
